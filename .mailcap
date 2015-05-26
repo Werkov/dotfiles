@@ -1,0 +1,2 @@
+application/pdf; evince '%s'; description="PDF document"; test=test -n "$DISPLAY"
+

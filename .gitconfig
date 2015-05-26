@@ -1,0 +1,13 @@
+[color]
+	ui = true
+[core]
+	editor = vim
+[user]
+	name = Michal Koutný
+	email = xm.koutny@gmail.com
+[push]
+	default = matching
+[alias]
+	mrg = merge --no-ff
+	stsh = "!f() { git stash show stash^{/$*} -p; }; f"
+	stap = "!f() { git stash apply stash^{/$*}; }; f"

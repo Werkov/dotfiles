@@ -1,5 +1,5 @@
 # dotfiles
-Backup &amp; share storage of user settings
+Backup, shared storage &amp; versioning of user settings
 
 Inspired by these [dotfiles](https://github.com/mathiasbynens/dotfiles). With
 `rsync`, I can have independent files in subdirectories rather than having
