@@ -35,6 +35,10 @@ set hlsearch                " Highlight searches by default.
 nnoremap <space> :nohlsearch<cr> " Hide search matches
 set incsearch               " Incrementally search while typing a /regex
 
+" -- quickfix errors
+map <F3> :cprev<CR>
+map <F4> :cnext<CR>
+
 " -- find & replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 

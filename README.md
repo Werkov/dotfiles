@@ -12,3 +12,7 @@ bunch of symlinks.
     $ cd dotfiles
     $ ./install.sh
 
+## TODO
+
+  * Are copies really better than symlinks?
+    * I cannot edit files in their original location.
