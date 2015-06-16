@@ -28,6 +28,11 @@ augroup END
 
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
+" -- folding
+" set foldmethod=syntax
+nnoremap <F9> za
+nnoremap <F10> zi
+
 " -- searching and patterns --
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
@@ -36,8 +41,8 @@ nnoremap <space> :nohlsearch<cr> " Hide search matches
 set incsearch               " Incrementally search while typing a /regex
 
 " -- quickfix errors
-map <F3> :cprev<CR>
-map <F4> :cnext<CR>
+map - :cprev<CR>
+map + :cnext<CR>
 
 " -- find & replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
