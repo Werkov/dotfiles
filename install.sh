@@ -1,18 +1,41 @@
 #!/usr/bin/env bash
 
-ROOT="$(dirname "${BASH_SOURCE}")"
+# Process arguments
 
-function doIt() {
-	rsync --exclude ".git/" --exclude "install.sh" \
-		--exclude "README.md" -avh --no-perms "$ROOT" "$HOME"
+INTERACTIVE="-i"
+
+if [ "x$1" = "x-f" ] ; then
+	INTERACTIVE=
+fi
+
+# Set up paths
+
+# debugging
+# HOME=/tmp/home
+
+pushd `dirname $0` &>/dev/null
+ROOT="$PWD"
+popd &>/dev/null
+	
+# Executive code
+
+function linkIt() {	
+	SRC="$HOME/`basename $1`"
+	DST="$1"
+	if [ -L "$SRC" ] ; then
+		echo "Skipping '$DST'"
+		return
+	fi
+	ln $INTERACTIVE -s "$DST" "$SRC"
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt;
-else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt;
-	fi;
-fi;
+for f in $ROOT/.* ; do
+	if [ "$f" = "$ROOT/."\
+	    -o "$f" = "$ROOT/.."\
+	    -o "$f" = "$ROOT/.git"\
+	    ] ; then
+		continue
+	fi
+	linkIt "$f"
+done
+
