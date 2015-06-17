@@ -1,7 +1,14 @@
-" -- moving --
-set autoindent              " always set autoindenting on
-set smartindent             " use smart indent if there is no indent file
+" -- moving & indentation --
+set autoindent           " always set autoindenting on
+set smartindent          " use smart indent if there is no indent file
 set mouse=a
+set fo+=cro              " continue comments on new line (in various insertions)
+
+" cut my hands off
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
 
 " -- syntax highlight --
@@ -11,14 +18,7 @@ set modeline
 filetype on
 filetype plugin indent on    " enable loading indent file for filetype
 
-" -- whitespace
-nmap <c-l> :set list! list?<cr> " show whitespace
-autocmd FileType c,cc,h,hpp,cpp,php autocmd BufWritePre <buffer> :%s/\([^ \t\r\n]\+\)\s\+$/\1/e
-
-" see
-" http://vimrc-dissection.blogspot.cz/2006/09/vim-7-re-turn-off-parenparenthesiswhat.html
-" let loaded_matchparen = 1
-
+" -- cursor highlight --
 hi CursorLine   cterm=none ctermbg=darkblue
 augroup CursorLine
 	au!
@@ -27,6 +27,11 @@ augroup CursorLine
 augroup END
 
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+
+
+" -- whitespace
+nmap <c-l> :set list! list?<cr> " show whitespace
+autocmd FileType c,cc,h,hpp,cpp,php,tex autocmd BufWritePre <buffer> :%s/\([^ \t\r\n]\+\)\s\+$/\1/e
 
 " -- folding
 " set foldmethod=syntax
