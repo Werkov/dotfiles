@@ -1,0 +1,5 @@
+! Caps Lock is also escape and original caps lock is achieved with modifier
+! keys to Caps Lock
+keycode  66 = Escape Caps_Lock Caps_Lock Caps_Lock
+keycode   9 = NoSymbol
+remove Lock = Caps_Lock
