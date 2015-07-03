@@ -3,7 +3,6 @@
 export PATH="$HOME/bin:$PATH"
 export CDPATH="$CDPATH:$HOME"
 
-# User specific aliases and functions
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -19,6 +18,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# User specific aliases and functions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
+[ -n "$DISPLAY" ] && xmodmap ~/.Xmodmap
+
+# Ruby environment...
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
