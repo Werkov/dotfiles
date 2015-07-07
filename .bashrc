@@ -21,7 +21,5 @@ fi
 # User specific aliases and functions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
-[ -n "$DISPLAY" ] && xmodmap ~/.Xmodmap
-
 # Ruby environment...
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
