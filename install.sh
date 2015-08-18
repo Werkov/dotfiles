@@ -3,10 +3,25 @@
 # Process arguments
 
 INTERACTIVE="-i"
+KDE=kde
 
-if [ "x$1" = "x-f" ] ; then
-	INTERACTIVE=
-fi
+while [ $# -gt 0 ] ; do
+	case "$1" in
+		"-f")
+			INTERACTIVE=
+			shift
+			;;
+		"-k4")
+			KDE=kde4
+			shift
+			;;
+		*)
+			echo "Unknown option '$1'"
+			exit 1
+			;;
+	esac
+done
+
 
 # Set up paths
 
@@ -20,22 +35,27 @@ popd &>/dev/null
 # Executive code
 
 function linkIt() {	
-	SRC="$HOME/`basename $1`"
-	DST="$1"
+	DIR="$HOME/`dirname $1`"
+	SRC="$HOME/$1"
+	DST="$ROOT/$1"
+
+	# Temporary workaround
+	SRC="${SRC/kde/$KDE}"
+	DIR="${DIR/kde/$KDE}"
+	
+
 	if [ -L "$SRC" ] ; then
 		echo "Skipping '$DST'"
 		return
 	fi
+
+	mkdir -p "$DIR"
 	ln $INTERACTIVE -s "$DST" "$SRC"
 }
 
-for f in $ROOT/.* ; do
-	if [ "$f" = "$ROOT/."\
-	    -o "$f" = "$ROOT/.."\
-	    -o "$f" = "$ROOT/.git"\
-	    ] ; then
-		continue
-	fi
-	linkIt "$f"
+for f in `find $ROOT -type f -path "$ROOT/.*" ! -path "$ROOT/.git/*"` ; do
+	name=${f#$ROOT/}
+
+	linkIt "$name"
 done
 
