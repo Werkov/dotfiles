@@ -1,0 +1,30 @@
+[$Version]
+update_info=yakuake.upd:2.9.9-startupnotification
+
+[Animation]
+Frames=0
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Dialogs]
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=
+
+[Shortcuts]
+new-session=Ctrl+Shift+N; Ctrl+Shift+T
+next-session=Ctrl+PgDown
+next-terminal=Ctrl+Shift+PgDown
+previous-session=Ctrl+PgUp
+previous-terminal=Ctrl+Shift+PgUp
+split-left-right=Ctrl+Shift+L
+split-top-bottom=Ctrl+Shift+B
+toggle-window-state=F12
+view-full-screen=Ctrl+Shift+F11; F11
+
+[Window]
+DynamicTabTitles=true
+Height=100
+Width=100
