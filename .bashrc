@@ -23,3 +23,5 @@ fi
 
 # Ruby environment...
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+. "$HOME/.bashrc.local"
