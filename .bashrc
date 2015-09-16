@@ -29,4 +29,5 @@ function f {
 	find . -iname "*$1*"
 }
 
-. "$HOME/.bashrc.local"
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
+
