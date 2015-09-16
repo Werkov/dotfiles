@@ -1,6 +1,7 @@
 [Appearance]
+BoldIntense=false
 ColorScheme=Linux
-Font=Monospace,10,-1,2,50,0,0,0,0,0
+Font=Liberation Mono,10,-1,5,50,0,0,0,0,0
 
 [General]
 Name=Shell
