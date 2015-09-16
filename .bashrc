@@ -23,3 +23,10 @@ fi
 
 # Ruby environment...
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Utility functions
+function f {
+	find . -iname "*$1*"
+}
+
+. "$HOME/.bashrc.local"
