@@ -1,0 +1,18 @@
+### GETTING THINGS DONE ###
+# http://blogs.techrepublic.com.com/opensource/?p=106&atag=nl.e011
+
+macro pager \Ct "<save-message>$my_gtd_action<enter><enter>" "Mark message as ACTION"
+macro pager \Cr "<save-message>$my_gtd_respond<enter><enter>" "Mark message as RESPOND"
+macro pager \Cw "<save-message>$my_gtd_waitfor<enter><enter>" "Mark message as WAITFOR"
+macro pager \Ca "<save-message>$my_gtd_archive<enter><enter>" "Archive message"
+
+macro index \Ci "<change-folder>$my_gtd_inbox<enter>" "Jump to INBOX folder"
+macro index \Ct "<change-folder>$my_gtd_action<enter>" "Jump to action folder"
+macro index \Cr "<change-folder>$my_gtd_respond<enter>" "Jump to respond folder"
+macro index \Cw "<change-folder>$my_gtd_waitfor<enter>" "Jump to waitfor folder"
+macro index \Ca "<change-folder>$my_gtd_archive<enter>" "Jump to archive folder"
+
+set move = no
+save-hook .* $my_archive
+
+

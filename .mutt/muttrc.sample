@@ -1,0 +1,46 @@
+#
+# Folders
+#
+set folder    = imaps://imap.example.org:993 # FILLME
+set spoolfile = "=INBOX"
+set mbox      = "=INBOX.Archives"
+set record    = "=INBOX.Sent"
+set postponed = "=INBOX.Drafts"
+
+#
+# GTD settings
+#
+set my_gtd_inbox       = "=INBOX"
+set my_gtd_action      = "=INBOX.ACTION"
+set my_gtd_waitfor     = "=INBOX.WAITFOR"
+set my_gtd_respond     = "=INBOX.RESPOND"
+set my_gtd_archive     = "=INBOX.Archives.`date +%Y`"
+
+#
+# GPG settings
+#
+set my_crypto_userid   = 0x0000000 # FILLME
+set my_crypto_pgpewrap = /usr/bin/pgpewrap
+
+#
+# SMTP + sender settings
+#
+set from         = "user@example.org" # FILLME
+
+set ssl_starttls = yes
+set smtp_url     = 'smtp://user@imap.example.org:587/' # FILLME
+
+#
+# IMAP settings
+#
+set imap_user    = user # FILLME
+set imap_passive = no
+set imap_idle    = yes
+#set imap_force_ssl = yes
+
+
+source ~/.mutt/inc/gtd
+source ~/.mutt/inc/crypto
+source ~/.mutt/inc/base
+source ~/.mutt/colors
+

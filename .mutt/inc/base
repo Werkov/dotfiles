@@ -1,0 +1,13 @@
+
+set sort             = reverse-threads
+set sort_aux         = last-date
+set index_format     = "%Z %{%-2d.%-2m. %H:%M}  %-20.20L %?M?(#%03M)? %?y?[%y]? %s %> "
+
+set certificate_file = ~/.mutt/certificates
+set recall           = no
+set autoedit         = no
+set edit_headers     = yes
+set fast_reply       = yes
+set attribution      = "On %d, %f wrote:"
+set forward_format   = "Fwd: %s"
+set timeout          = 30
