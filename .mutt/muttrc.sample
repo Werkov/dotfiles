@@ -21,6 +21,7 @@ set my_gtd_archive     = "=INBOX.Archives.`date +%Y`"
 #
 set my_crypto_userid   = 0x0000000 # FILLME
 set my_crypto_pgpewrap = /usr/bin/pgpewrap
+# set my_crypto_pgpewrap = /usr/lib/mutt/pgpewrap
 
 #
 # SMTP + sender settings
@@ -29,11 +30,13 @@ set from         = "user@example.org" # FILLME
 
 set ssl_starttls = yes
 set smtp_url     = 'smtp://user@imap.example.org:587/' # FILLME
+# set smtp_pass    = `python -c "import keyring; print(keyring.get_password('gmail', 'user@example.org'))"`
 
 #
 # IMAP settings
 #
 set imap_user    = user # FILLME
+# set imap_pass    = `python -c "import keyring; print(keyring.get_password('gmail', 'user@example.org'))"`
 set imap_passive = no
 set imap_idle    = yes
 #set imap_force_ssl = yes
