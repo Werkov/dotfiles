@@ -1,3 +1,4 @@
+# vim: syn=muttrc
 # colors
 color normal	white black
 color attachment brightyellow black
