@@ -18,6 +18,7 @@ alias blog='bzr log --line | less'
 # -- Misc --
 alias vlna='vlna -v KkSsVvZzOoUuAaIi'
 alias mtime="/usr/bin/time -f \"real time:\t%e s\nmax memory:\t%M kB\n\""
-alias muttf='mutt -f +fykos/INBOX'
+alias muttf='mutt -F ~/.mutt/muttrc.fykos'
 
 alias cscope-init="find . \\( -name '*.c' -o -name '*.h' \\) ! -path './.*' | cscope -b -i -"
+alias drafts='cd ~/projects/Werkov.github.io/_drafts'
