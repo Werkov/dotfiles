@@ -13,3 +13,5 @@ set fast_reply       = yes
 set attribution      = "On %d, %f wrote:"
 set forward_format   = "Fwd: %s"
 set timeout          = 30
+
+bind index + collapse-thread
