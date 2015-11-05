@@ -22,3 +22,6 @@ alias muttf='mutt -F ~/.mutt/muttrc.fykos'
 
 alias cscope-init="find . \\( -name '*.c' -o -name '*.h' \\) ! -path './.*' | cscope -b -i -"
 alias drafts='cd ~/projects/Werkov.github.io/_drafts'
+
+alias sc='systemctl'
+alias ssc='sudo systemctl'
