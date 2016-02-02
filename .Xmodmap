@@ -3,3 +3,7 @@
 keycode  66 = Escape Caps_Lock Caps_Lock Caps_Lock
 keycode   9 = Escape
 remove Lock = Caps_Lock
+
+! enable F10 as Pause with Shift(?) modifier
+keycode  76 = F10 Pause Pause F10 F10 F10 XF86Switch_VT_10 F10 F10 XF86Switch_VT_10 F10 F10 F10 F10 XF86Switch_VT_10
+
