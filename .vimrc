@@ -26,7 +26,23 @@ augroup CursorLine
 	au WinLeave * set nocursorline
 augroup END
 
+" -- text width highlight --
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+let s:activatedtw = 2
+function! ToggleTW()
+	if s:activatedtw == 0
+		let s:activatedtw = 1
+		match ErrorMsg '\%>80v.\+'
+	elseif s:activatedtw == 1
+		let s:activatedtw = 0
+		match none
+	else
+		let s:activatedtw = 0
+		call matchdelete(w:m2)
+	endif
+endfunction
+
+nmap <c-k> :call ToggleTW()<cr>
 
 
 " -- whitespace
