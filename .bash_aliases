@@ -6,6 +6,7 @@ alias ..="cd .."
 alias gst='git status'
 alias gdf='git diff'
 alias gad='git add'
+alias gbl='git blame'
 alias glog='git log --oneline'
 alias gco='git commit'
 alias grm='git rm'
