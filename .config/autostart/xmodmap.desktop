@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-SuSE-translate=false
+Encoding=UTF-8
+Name=xmodmap modify keyboard layout
+Exec=/etc/hotplug-command.sh 
+Type=Application
+Categories=System;
+StartupNotify=true
+
