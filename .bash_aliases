@@ -1,6 +1,7 @@
 alias ll="ls -l"
 alias la="ls -a"
 alias ..="cd .."
+alias j="jobs"
 
 # --Git aliases--
 alias gst='git status'
