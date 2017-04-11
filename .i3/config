@@ -119,6 +119,15 @@ bindsym $mod+iacute workspace number 9
 bindsym $mod+eacute workspace number 10
 
 bindsym $mod+Control+plus workspace number 11
+bindsym $mod+Control+ecaron workspace number 12
+bindsym $mod+Control+scaron workspace number 13
+bindsym $mod+Control+ccaron workspace number 14
+bindsym $mod+Control+rcaron workspace number 15
+bindsym $mod+Control+zcaron workspace number 16
+bindsym $mod+Control+yacute workspace number 17
+bindsym $mod+Control+aacute workspace number 18
+bindsym $mod+Control+iacute workspace number 19
+bindsym $mod+Control+eacute workspace number 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -131,6 +140,16 @@ bindsym $mod+Shift+yacute move container to workspace number 7
 bindsym $mod+Shift+aacute move container to workspace number 8
 bindsym $mod+Shift+iacute move container to workspace number 9
 bindsym $mod+Shift+eacute move container to workspace number 10
+bindsym $mod+Control+Shift+1 move container to workspace number 11
+bindsym $mod+Control+Shift+ecaron move container to workspace number 12
+bindsym $mod+Control+Shift+scaron move container to workspace number 13
+bindsym $mod+Control+Shift+ccaron move container to workspace number 14
+bindsym $mod+Control+Shift+rcaron move container to workspace number 15
+bindsym $mod+Control+Shift+zcaron move container to workspace number 16
+bindsym $mod+Control+Shift+yacute move container to workspace number 17
+bindsym $mod+Control+Shift+aacute move container to workspace number 18
+bindsym $mod+Control+Shift+iacute move container to workspace number 19
+bindsym $mod+Control+Shift+eacute move container to workspace number 20
 
 # analogy to numerical switching/moving
 # rename workspace
