@@ -72,9 +72,13 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Move focus to the next output
+bindsym $mod+x focus output right
+
 # Move the current workspace to the next output
 # # (effectively toggles when you only have two outputs)
-bindsym $mod+x move workspace to output right
+bindsym $mod+Shift+x move workspace to output right
+
 
 # split in horizontal orientation
 bindsym $mod+b split h
