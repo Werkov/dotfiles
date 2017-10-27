@@ -11,6 +11,7 @@ alias gbl='git blame'
 alias glog='git log --oneline'
 alias gco='git commit'
 alias grm='git rm'
+alias gcp='git cherry-pick -x'
 
 # --Bazaar aliases--
 alias bst='bzr status'
