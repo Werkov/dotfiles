@@ -12,6 +12,8 @@ alias glog='git log --oneline'
 alias gco='git commit'
 alias grm='git rm'
 alias gcp='git cherry-pick -x'
+alias gdt='git describe --tags'
+alias gda='git describe --all'
 
 # --Bazaar aliases--
 alias bst='bzr status'
@@ -23,6 +25,7 @@ alias blog='bzr log --line | less'
 alias vlna='vlna -v KkSsVvZzOoUuAaIi'
 alias mtime="/usr/bin/time -f \"real time:\t%e s\nmax memory:\t%M kB\n\""
 alias muttf='mutt -F ~/.mutt/muttrc.fykos'
+alias hd='hexdump -C'
 
 alias cscope-init="find . \\( -name '*.c' -o -name '*.h' -o -name '*.cc' -o -name '*.hh' \\) ! -path './.*' | cscope -b -i -"
 alias drafts='cd ~/projects/Werkov.github.io/_drafts'
