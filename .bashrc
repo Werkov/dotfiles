@@ -29,5 +29,10 @@ function f {
 	find . -iname "*$1*"
 }
 
+function mkcd {
+	mkdir -p "$1"
+	cd "$1"
+}
+
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
