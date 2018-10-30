@@ -3,6 +3,7 @@ set autoindent           " always set autoindenting on
 set smartindent          " use smart indent if there is no indent file
 set mouse=a
 set fo+=cro              " continue comments on new line (in various insertions)
+set showcmd
 
 " cut my hands off
 noremap <Up> <nop>
