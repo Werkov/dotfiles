@@ -19,3 +19,7 @@ set header_cache     = ~/.mutt/header_cache
 
 # Key bindings
 bind index + collapse-thread
+bind pager G bottom
+bind pager <Home> top
+bind pager j next-line
+bind pager k previous-line
