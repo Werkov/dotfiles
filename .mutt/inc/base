@@ -23,3 +23,6 @@ bind pager G bottom
 bind pager <Home> top
 bind pager j next-line
 bind pager k previous-line
+
+# Calendaring
+auto_view text/calendar application/ics

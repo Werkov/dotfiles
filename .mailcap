@@ -23,4 +23,6 @@ image/svg+xml; eog %s; test=test -n "$DISPLAY"
 image/svg+xml-compressed; eog %s; test=test -n "$DISPLAY"
 image/vnd.wap.wbmp; eog %s; test=test -n "$DISPLAY"
 
+text/calendar; mutt-ics; copiousoutput
+application/ics; mutt-ics; copiousoutput 
 
