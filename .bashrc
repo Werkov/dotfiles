@@ -47,7 +47,7 @@ function git_prompt {
     echo -n '> '
 }
 
-PS1=$(git_prompt)
+PS1="\$(git_prompt)"
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
