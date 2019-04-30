@@ -48,5 +48,6 @@ source ~/.mutt/inc/crypto
 source ~/.mutt/inc/base
 # requires: perl-MailTools, perl-Mail-Box
 source ~/.mutt/inc/notmuch
+source ~/.mutt/inc/headers
 source ~/.mutt/colors
 
