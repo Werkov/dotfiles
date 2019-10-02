@@ -55,6 +55,14 @@ autocmd FileType c,cc,h,hpp,cpp,php,tex autocmd BufWritePre <buffer> :%s/\([^ \t
 nnoremap <F9> za
 nnoremap <F10> zi
 
+" -- TODO file
+" done
+nnoremap <F5> ma :/^[^ ]/<cr> :noh<cr> mb :'a,'b-1d<cr>Gp'b
+" done & repeat
+nnoremap <S-F5> ma :/^[^ ]/<cr> :noh<cr> mb :'a,'b-1d<cr>Gp'b}P'b
+" cancelled
+nnoremap <C-F5> ma :/^[^ ]/<cr> :noh<cr> mb :'a,'b-1d<cr>GpIx <esc>'b
+
 " -- searching and patterns --
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
