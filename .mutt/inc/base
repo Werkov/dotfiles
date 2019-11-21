@@ -13,6 +13,7 @@ set fast_reply       = yes
 set attribution      = "On %d, %f wrote:"
 set forward_format   = "Fwd: %s"
 set timeout          = 30
+set markers          = no
 
 set pager_index_lines= 6
 set header_cache     = ~/.mutt/header_cache
