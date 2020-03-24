@@ -78,5 +78,5 @@ function gcinfo
 end
 
 
-[ -f ~/.bash_aliases.local ] ; and source ~/.fish_aliases.local
+[ -f ~/.fish_aliases.local ] ; and source ~/.fish_aliases.local
 
