@@ -55,5 +55,28 @@ function fish_prompt
     echo -n '> '
 end
 
+function gcnt
+    git show -s --oneline $argv[1] | git name-rev --stdin
+end
+
+function gfp
+    set hash (git show -s --format="%H" $argv[1])
+    set filename (git show -s --format="%f" $argv[1]).patch
+    set desc (git describe --contains $hash)
+
+    echo "$hash ($desc) > $argv[2]/$filename"
+    git format-patch --add-header="Git-commit: $hash" \
+                     --add-header="Patch-mainline: $desc" \
+		     --add-header="References: TODO" \
+		     --stdout \
+		     $hash -1 >$argv[2]/$filename
+end
+
+function gcinfo
+    set desc (git describe --contains $argv[1] --match="v*")
+    git show -s --format="%h (\"%s\") $desc" $argv[1]
+end
+
+
 [ -f ~/.bash_aliases.local ] ; and source ~/.fish_aliases.local
 
