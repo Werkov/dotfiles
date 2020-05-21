@@ -18,3 +18,16 @@ color tree	red black
 #color body	brightred black [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 #color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
 
+# Diff coloring (https://www.do-not-panic.com/2014/07/colored-diffs-with-mutt.html)
+# color   normal  white           default
+# color   body    brightwhite     default         ^[[:space:]].*
+color   body    brightwhite     default         ^(diff).*
+color   body    white           default         ^[\-\-\-].*
+color   body    white           default         ^[\+\+\+].*
+color   body    green           default         ^[\+].*
+#color   body    color65           default         ^[\+].*
+color   body    red             default         ^[\-].*
+color   body    brightblue      default         @@.*
+#color   body    brightwhite     default         ^(\s).*
+color   body    brightwhite     default         ^(Signed-off-by).*
+color   body    brightwhite     default         ^(Cc)
