@@ -5,9 +5,13 @@
 [user]
 	name = Michal Koutný
 	email = xm.koutny@gmail.com
+[sendemail]
+        suppresscc=all
 [push]
 	default = matching
 [alias]
 	mrg = merge --no-ff
 	stsh = "!f() { git stash show stash^{/$*} -p; }; f"
 	stap = "!f() { git stash apply stash^{/$*}; }; f"
+[pull]
+	ff = only
