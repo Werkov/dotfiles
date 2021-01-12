@@ -35,14 +35,13 @@ function mkcd {
 }
 
 function git_prompt {
-    echo -ne '\033[0m'
     echo -n $USER@$(hostname)':'
     if git_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null) ; then
+      echo -ne '\033[0m'
       echo -ne '\033[0;33m'
       echo -n ' '$git_branch' '
+      echo -ne '\033[0m'
     fi
-    # echo -ne '\033[0;32m'
-    echo -ne '\033[0m'
     echo -n $PWD
     echo -n '> '
 }
