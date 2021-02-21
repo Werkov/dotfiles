@@ -214,3 +214,6 @@ bindsym Shift+F12 exec $terminal --hide-menubar
 bindsym Ctrl+F12 move scratchpad
 bindsym F12 scratchpad show
 
+# Screenshots
+bindsym Print exec scrot 'scrot-%Y-%m-%d-%H:%M:%S.png' -e 'mv $f ~/Pictures'
+bindsym Shift+Print exec scrot -u 'scrot-%Y-%m-%d-%H:%M:%S-window_$wx$h.png' -e 'mv $f ~/Pictures'
