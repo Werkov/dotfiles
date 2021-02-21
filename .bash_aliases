@@ -33,5 +33,7 @@ alias drafts='cd ~/projects/Werkov.github.io/_drafts'
 alias sc='systemctl'
 alias ssc='sudo systemctl'
 
+alias ip='ip -c'
+
 [ -f ~/.bash_aliases.local ] && . ~/.bash_aliases.local
 
