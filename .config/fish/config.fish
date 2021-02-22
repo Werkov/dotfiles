@@ -55,8 +55,6 @@ end
 #     echo -n '> '
 # end
 
-set -x __fish_git_prompt_color_branch yellow
-
 function gcnt
     git show -s --oneline $argv[1] | git name-rev --stdin
 end
