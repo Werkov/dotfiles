@@ -33,6 +33,8 @@ alias ip 'ip -c'
 alias cscope-init "find . \\( -name '*.c' -o -name '*.h' -o -name '*.cc' -o -name '*.hh' \\) ! -path './.*' | cscope -b -i -"
 alias drafts 'cd ~/projects/Werkov.github.io/_drafts'
 
+[ -f ~/.fish_aliases.local ] ; and source ~/.fish_aliases.local
+
 # Utility functions
 function f
 	find . -iname "*$argv[1]*"
@@ -71,7 +73,9 @@ function gfp
 end
 
 function gcinfo
-    set desc (git describe --contains $argv[1] --match="v*")
-    git show -s --format="%h (\"%s\") $desc" $argv[1]
+    for h in $argv
+        set desc (git describe --contains $h --match="v*")
+        git show -s --format="%h (\"%s\") $desc" $h
+    end
 end
 
