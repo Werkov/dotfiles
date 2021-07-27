@@ -12,14 +12,17 @@ set editor           = "/usr/bin/env vi +"
 set fast_reply       = yes
 set attribution      = "On %d, %f wrote:"
 set forward_format   = "Fwd: %s"
+set mime_forward     = ask-yes
 set timeout          = 30
 set markers          = no
+set mbox_type        = "Maildir"
 
 set pager_index_lines= 6
 set header_cache     = ~/.mutt/header_cache
 
 # Key bindings
 bind index + collapse-thread
+bind index _ collapse-all
 bind pager G bottom
 bind pager <Home> top
 bind pager j next-line
