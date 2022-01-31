@@ -2,6 +2,8 @@
 	ui = true
 [core]
 	editor = vim
+[diff]
+	colorMoved = default
 [user]
 	name = Michal Koutný
 	email = xm.koutny@gmail.com
