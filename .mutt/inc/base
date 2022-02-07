@@ -14,7 +14,8 @@ set attribution      = "On %d, %f wrote:"
 set forward_format   = "Fwd: %s"
 set mime_forward     = ask-yes
 set timeout          = 30
-set markers          = no
+set markers          = yes
+set wrap             = 80
 set mbox_type        = "Maildir"
 
 set pager_index_lines= 6
@@ -27,6 +28,7 @@ bind pager G bottom
 bind pager <Home> top
 bind pager j next-line
 bind pager k previous-line
+macro pager \Ck '<enter-command>toggle markers<enter>'
 
 # Calendaring
 auto_view text/calendar application/ics
