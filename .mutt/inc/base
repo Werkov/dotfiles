@@ -28,7 +28,12 @@ bind pager G bottom
 bind pager <Home> top
 bind pager j next-line
 bind pager k previous-line
-macro pager \Ck '<enter-command>toggle markers<enter>'
+
+macro pager \Cl '<enter-command>toggle markers<enter>'
+set my_old_wrap = 0
+macro pager \Ck \
+"<enter-command>set my_tmp=\$my_old_wrap my_old_wrap=\$wrap<enter>\
+<enter-command>set wrap=\$my_tmp<enter>"
 
 # Calendaring
 auto_view text/calendar application/ics
