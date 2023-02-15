@@ -28,6 +28,7 @@ bind pager G bottom
 bind pager <Home> top
 bind pager j next-line
 bind pager k previous-line
+bind pager i toggle-quoted
 
 macro pager \Cl '<enter-command>toggle markers<enter>'
 set my_old_wrap = 0
