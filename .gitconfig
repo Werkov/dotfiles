@@ -9,6 +9,8 @@
 	email = xm.koutny@gmail.com
 [sendemail]
         suppresscc=all
+[notes]
+	rewriteRef=refs/notes/commits
 [push]
 	default = matching
 [alias]
