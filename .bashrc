@@ -34,19 +34,11 @@ function mkcd {
 	cd "$1"
 }
 
-function git_prompt {
-    echo -n $USER@$(hostname)':'
-    if git_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null) ; then
-      echo -ne '\033[0m'
-      echo -ne '\033[0;33m'
-      echo -n ' '$git_branch' '
-      echo -ne '\033[0m'
-    fi
-    echo -n $PWD
-    echo -n '> '
-}
-
-PS1="\$(git_prompt)"
+if [ -f /usr/share/bash-completion/completions/git-prompt.sh ] ; then 
+	source /usr/share/bash-completion/completions/git-prompt.sh
+	PS1='\u@\h \w$(__git_ps1 " (%s)")> '
+	export GIT_PS1_SHOWCOLORHINTS=1
+fi
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
