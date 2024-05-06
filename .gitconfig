@@ -4,6 +4,8 @@
 	editor = vim
 [diff]
 	colorMoved = default
+[format]
+	coverFromDescription = auto
 [user]
 	name = Michal Koutný
 	email = xm.koutny@gmail.com

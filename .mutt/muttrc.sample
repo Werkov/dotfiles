@@ -43,11 +43,10 @@ set imap_idle    = yes
 #set imap_force_ssl = yes
 
 
+source ~/.mutt/inc/notmuch
 source ~/.mutt/inc/gtd
 source ~/.mutt/inc/crypto
 source ~/.mutt/inc/base
-# requires: perl-MailTools, perl-Mail-Box
-source ~/.mutt/inc/notmuch
 source ~/.mutt/inc/headers
 source ~/.mutt/colors
 

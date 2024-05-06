@@ -1,5 +1,6 @@
 # vim: syn=muttrc
 
+# check this https://mastodon.social/@monsieuricon@social.kernel.org/111539836339746581
 set sort             = reverse-threads
 set sort_aux         = last-date
 set index_format     = "%Z %[%-2d.%-2m. %H:%M]  %-20.20L %?M?(#%03M)? %?y?[%y]? %s %> "

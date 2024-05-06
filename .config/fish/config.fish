@@ -32,6 +32,7 @@ alias blog 'bzr log --line | less'
 # -- Misc --
 alias mtime "/usr/bin/time -f \"real time:\t%e s\nmax memory:\t%M kB\n\""
 alias muttf 'mutt -F ~/.mutt/muttrc.fykos'
+alias mutt 'neomutt'
 alias ip 'ip -c'
 
 alias cscope-init "find . \\( -name '*.c' -o -name '*.h' -o -name '*.cc' -o -name '*.hh' \\) ! -path './.*' | cscope -b -i -"
