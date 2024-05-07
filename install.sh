@@ -53,7 +53,7 @@ function linkIt() {
 	ln $INTERACTIVE -s "$DST" "$SRC"
 }
 
-for f in `find $ROOT -type f -path "$ROOT/.*" ! -path "$ROOT/.git/*"` ; do
+for f in `find $ROOT -type f -path "$ROOT/.*" ! -path "$ROOT/.git/*" ! -name "*.swp"` ; do
 	name=${f#$ROOT/}
 
 	linkIt "$name"
