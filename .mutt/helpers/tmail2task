@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Inspired by https://www.nixternal.com/mark-e-mails-in-mutt-as-tasks-in-taskwarrior/
+
+mid=$(sed -n -e '/^Message-ID: *$/I{N;s/\n//;p}' -e '/^Message-ID/Ip' | grep -im1 "^Message-ID: " | awk '{print $2}')
+mid=${mid#<}
+mid=${mid%>}
+
+echo -n "task add mid:$mid "
+read task_in </dev/tty
+
+task add mid:$mid $task_in
+

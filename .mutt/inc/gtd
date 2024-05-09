@@ -19,6 +19,6 @@ macro index \Ca "<change-folder>$my_gtd_archive<enter>" "Jump to archive folder"
 set move = no
 save-hook .* $my_gtd_archive
 
-macro index <F2> "<pipe-message>~/bin/tmail2task<enter>"
-macro pager <F2> "<pipe-message>~/bin/tmail2task<enter>"
+macro index <F2> "<pipe-message>~/.mutt/helpers/tmail2task<enter>"
+macro pager <F2> "<pipe-message>~/.mutt/helpers/tmail2task<enter>"
 
