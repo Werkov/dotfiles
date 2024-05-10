@@ -1,8 +1,5 @@
 # .bashrc
 
-export PATH="$HOME/bin:$PATH"
-export CDPATH="$CDPATH:$HOME"
-
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -20,9 +17,6 @@ fi
 
 # User specific aliases and functions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
-
-# Ruby environment...
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Utility functions
 function f {

@@ -9,10 +9,6 @@ export EDITOR=/usr/bin/vim
 bind -e -a \ce
 bind \ce edit_command_buffer
 
-# Set up environment
-set -x CDPATH . $HOME
-set -x PATH $HOME/bin $PATH
-
 # --Git aliases--
 alias gst 'git status'
 alias gdf 'git diff'
