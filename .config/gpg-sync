@@ -1,0 +1,8 @@
+# ssh access
+REMOTE_USER=$USER
+REMOTE_HOST=
+REMOTE_PORT=
+REMOTE_PATH=
+# keysigning
+TRUST_KEY=
+

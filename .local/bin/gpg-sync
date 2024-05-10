@@ -1,0 +1,59 @@
+#!/bin/bash
+
+if ! test -f $HOME/.config/gpg-sync ; then
+	echo "Missing config file"
+	exit 1
+fi
+source $HOME/.config/gpg-sync
+
+local_keyring=$(mktemp)
+local_trustdb=$(mktemp)
+
+remote_keyring=$(mktemp)
+remote_trustdb=$(mktemp)
+
+local_key=$(mktemp)
+
+function sync_keyring() {
+	echo "### Downloading remote keyring"
+	scp -P $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/keyring.asc $remote_keyring
+
+	echo "### Importing remote keyring"
+	gpg2 --import $remote_keyring
+
+	echo "### Upload merged keyring"
+	gpg2 --export --armor >$local_keyring
+	scp -P $REMOTE_PORT $local_keyring $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/keyring.asc 
+}
+
+function sync_ownertrust() {
+	local trustdb=${remote_trustdb}.raw
+
+	echo "### Downloading remote ownertrust"
+	scp -P $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/ownertrust.gpg $remote_trustdb
+
+	if [ -s $remote_trustdb ] ; then
+		gpg2 --export $TRUST_KEY >$local_key
+		if ! gpg2 --no-default-keyring --keyring=$local_key --output $trustdb --verify $remote_trustdb ; then
+			echo "Bad signature"
+			return
+		fi
+
+		echo "### Importing remote ownertrust"
+		gpg2 --import-ownertrust $trustdb
+
+		rm -f $trustdb
+	fi
+
+
+	echo "### Sign exported ownertrust"
+	gpg2 --export-ownertrust | gpg2 --default-key $TRUST_KEY --sign --armor >$local_trustdb
+
+	echo "### Upload merged ownertrust"
+	scp -P $REMOTE_PORT $local_trustdb $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/ownertrust.gpg
+}
+
+sync_keyring
+sync_ownertrust
+
+rm -f $local_keyring $local_trustdb $remote_keyring $remote_trustdb $local_key
