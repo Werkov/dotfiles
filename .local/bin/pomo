@@ -1,0 +1,68 @@
+#!/bin/bash
+
+trap terminate SIGINT
+
+function terminate() {
+	rm $alive_file
+}
+
+iteration=0
+
+name=$(basename $0)
+flavor=${name#pomo}
+
+case $flavor in
+	l)
+		period=2100
+		;;
+	*)
+		period=1200
+		;;
+esac
+
+while [ $# -gt 0 ] ; do
+	case $1 in
+		-i)
+			iteration=${2:-1}
+			shift
+			;;
+		*)
+			period=$1
+			;;
+	esac
+	shift
+done
+
+for i in $(seq $iteration) ; do
+	period=$(($period * 6 / 10))
+done
+
+minutes=$(($period / 60))
+seconds=$(($period % 60))
+
+alive_file=`mktemp`
+while [ $minutes -gt 0 -a -f $alive_file ] ; do
+	echo "Remaining $minutes min $seconds sec"
+	sleep 60
+	minutes=$(($minutes - 1))
+done
+sleep $seconds
+
+echo -e "DONG!\a\a\a"
+notify-send -u critical "POMO interrupt" &
+
+ended=`date +%s`
+minutes=0
+while [ -f $alive_file ] ; do
+	sleep 60
+	minutes=$(($minutes + 1))
+	echo "$minutes min over"
+done
+
+killed=`date +%s`
+diff=$(($killed-$ended))
+
+minutes=$(($diff / 60))
+seconds=$(($diff % 60))
+
+echo "Ended $minutes min $seconds sec over"
