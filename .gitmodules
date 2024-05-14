@@ -1,3 +1,3 @@
 [submodule "task-relative-recur"]
 	path = task-relative-recur
-	url = https://github.com/JensErat/task-relative-recur.git
+	url = git@github.com:Werkov/task-relative-recur.git
