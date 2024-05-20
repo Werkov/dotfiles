@@ -88,6 +88,9 @@ function! LoadCscope()
 	endif
 endfunction
 au BufEnter /* call LoadCscope()
+" default keyprotocol=kitty:kitty,foot:kitty,wezterm:kitty,xterm:mok2
+" kitty won't work well with cscope's <C-@> mappings
+set keyprotocol=
 
 nmap <2-LeftMouse> :cs find g <C-R>=expand("<cword>")<CR><CR>	
 
