@@ -156,12 +156,10 @@ bindsym $mod+Control+Shift+eacute move container to workspace number 20
 
 # analogy to numerical switching/moving
 # rename workspace
-bindsym $mod+Control+Shift+n exec i3-input -F 'rename workspace to %s' -P 'New name: '
-# move window to workspace
-bindsym $mod+Shift+n exec i3-input -F 'move container to workspace %s' -P 'Move to: '
-# switch to named workspace
-bindsym $mod+n exec i3-input -F 'workspace %s' -P 'Workspace: '
+set $rename-cmd rofi -dmenu -window-title "New name" -theme-str 'listview {lines: 0;}' -input /dev/null
+set $currentws-cmd swaymsg -t get_workspaces | jq -r '.[] | select(.focused) | .["name"]' | cut -d":" -f1
 
+bindsym $mod+Control+Shift+n exec swaymsg "rename workspace to $($currentws-cmd): $($rename-cmd)"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
