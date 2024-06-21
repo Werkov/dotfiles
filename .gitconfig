@@ -6,6 +6,7 @@
 	colorMoved = default
 [format]
 	coverFromDescription = auto
+	coverLetter = auto
 [user]
 	name = Michal Koutný
 	email = xm.koutny@gmail.com
@@ -21,3 +22,8 @@
 	stap = "!f() { git stash apply stash^{/$*}; }; f"
 [pull]
 	ff = only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

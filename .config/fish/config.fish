@@ -16,12 +16,14 @@ set -x CDPATH . $HOME
 # --Git aliases--
 alias gst 'git status'
 alias gdf 'git diff'
+alias gdfc 'git diff --cached'
 alias gad 'git add'
 alias gbl 'git blame'
 alias glog 'git log --oneline'
 alias gco 'git commit'
 alias grm 'git rm'
 alias gcp 'git cherry-pick -x'
+alias ggr 'git grep'
 
 # --Bazaar aliases--
 alias bst 'bzr status'
