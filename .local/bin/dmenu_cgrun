@@ -1,0 +1,7 @@
+#!/bin/sh
+cmd=$(dmenu_path | dmenu "$@")
+
+set -- $cmd
+name=$(basename $1)
+rnd=$(uuidgen)
+systemd-run --user --unit=app-dmenu-$name-$rnd "$@"
