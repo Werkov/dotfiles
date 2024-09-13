@@ -22,6 +22,8 @@
 	stap = "!f() { git stash apply stash^{/$*}; }; f"
 [pull]
 	ff = only
+[rebase]
+	autosquash = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
