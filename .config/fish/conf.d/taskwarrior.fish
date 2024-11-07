@@ -1,6 +1,8 @@
+alias t task
+
 function trotate
 	set id $argv[1]
-	set mod $argv[2]
+	set mod $argv[2..-1]
 
 	set blocked (task info $id | \
         awk '/This task is blocking/ {b=1;f=1;}
@@ -37,4 +39,15 @@ function treview
 		end
 		echo $uuid reviewed
 	end
+end
+
+function twait
+	set id $argv[1]
+	set exp $argv[2]
+
+	if string match -r "[0-9]+[a-z]+" "$exp"
+		set exp "now+$exp"
+	end
+
+	task "$id" mod wait:$exp
 end
