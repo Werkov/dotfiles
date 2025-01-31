@@ -22,7 +22,7 @@ alias gbl 'git blame'
 alias glog 'git log --oneline'
 alias gco 'git commit'
 alias grm 'git rm'
-alias gcp 'git cherry-pick -x'
+alias gcp 'git cherry-pick'
 alias ggr 'git grep'
 
 # --Bazaar aliases--
