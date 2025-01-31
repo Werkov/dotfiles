@@ -45,7 +45,7 @@ function twait
 	set id $argv[1]
 	set exp $argv[2]
 
-	if string match -r "[0-9]+[a-z]+" "$exp"
+	if string match -r "^[0-9]+[a-z]+" "$exp"
 		set exp "now+$exp"
 	end
 
