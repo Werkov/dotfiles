@@ -22,3 +22,5 @@ save-hook .* $my_gtd_archive
 macro index <F2> "<pipe-message>~/.mutt/helpers/tmail2task<enter>"
 macro pager <F2> "<pipe-message>~/.mutt/helpers/tmail2task<enter>"
 
+macro index <F4> "<save-message>$my_gtd_spam<enter><enter>" "Move to spam"
+macro pager <F4> "<save-message>$my_gtd_spam<enter><enter>" "Move to spam"

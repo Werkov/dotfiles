@@ -16,6 +16,7 @@ set my_gtd_action      = "=INBOX.ACTION"
 set my_gtd_waitfor     = "=INBOX.WAITFOR"
 set my_gtd_respond     = "=INBOX.RESPOND"
 set my_gtd_archive     = "=INBOX.Archives.`date +%Y`"
+set my_gtd_spam        = "=Spam"
 
 #
 # GPG settings
