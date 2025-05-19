@@ -216,3 +216,6 @@ output * {
 	background #000000 solid_color
 }
 include ~/.config/sway/config.d/*
+
+# for right link hand
+seat seat0 xcursor_theme Adwaita
