@@ -87,7 +87,9 @@ function! LoadCscope()
 		set cscopeverbose
 	endif
 endfunction
-au BufEnter /* call LoadCscope()
+if !has('nvim')
+	au BufEnter /* call LoadCscope()
+endif
 
 nmap <2-LeftMouse> :cs find g <C-R>=expand("<cword>")<CR><CR>	
 
