@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=NeoMutt
+Exec=/usr/bin/foot neomutt %u
