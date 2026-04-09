@@ -108,3 +108,6 @@ if has("gui_running")
 	au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 	au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 endif
+
+" -- digraphs
+digraph ?! 8253 " interrobang ‽
