@@ -5,4 +5,6 @@ vim.diagnostic.config({
 	virtual_text = true,
 })
 
-vim.cmd('colorscheme vim')
+vim.cmd('colorscheme koehler')
+
+vim.opt.splitright = true
