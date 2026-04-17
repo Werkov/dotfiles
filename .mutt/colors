@@ -31,3 +31,6 @@ color   body    brightblue      default         @@.*
 #color   body    brightwhite     default         ^(\s).*
 color   body    brightwhite     default         ^(Signed-off-by).*
 color   body    brightwhite     default         ^(Cc)
+
+# LLM detector
+color body brightred blue —
